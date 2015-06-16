@@ -44,5 +44,12 @@ get "/users/:user_id" do
 end
 
 get "/game_test" do
+  @user_id = 1
+  @current_player = 1
   erb :game_test
+end
+
+post "/next_player" do
+
+  redirect to "/game_test"
 end
