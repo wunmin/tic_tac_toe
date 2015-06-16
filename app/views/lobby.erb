@@ -1,0 +1,18 @@
+<h3>Games available</h3>
+
+<p>Join game or create a new game to start playing.</p>
+
+<div class="available_games">
+  <% @available_games.each do |game| %>
+    <div>
+      <%= game.player1_id %>
+      <form action="/games/<%= game.id %>/join" method="POST">
+        <input type="submit" value="Join"></input>
+      </form>
+    </div>
+  <% end %>
+</div>
+
+<form id="new_game" action="/games/new" method="POST">
+  <input type="submit" value="Create New Game"></input>
+</form>
